@@ -10,7 +10,15 @@ class Search extends Component {
         <div className="row w-100">
           <div className="col-2"></div>
           <div className="col-3">
-            <input type="text" class="form-control" placeholder="Location"/>
+          <div className="form-group">            
+            <select className="form-control" id="exampleFormControlSelect1" >
+              <option>Cusine</option>
+              <option>French</option>
+              <option>English</option>
+              <option>Spanish</option>
+              <option>Italian</option>
+            </select>
+          </div>
           </div>
           <div class="col-3">
             <input type="date" class="form-control" placeholder="Date"/>
