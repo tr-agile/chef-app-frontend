@@ -26,8 +26,6 @@ function App() {
       </div>    
       <Search/>
       <br/>       
-      <Type/>
-      <br/>
       <div className="row-100 d-flex justify-content-center">              
         <div className="col-5">      
           <Menu/>
