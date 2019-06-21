@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Accordion from 'react-bootstrap/Accordion';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Booking from "./BookingForm";
+import AccordionCollapse from "react-bootstrap/AccordionCollapse";
 
 
 class Menu extends Component {
@@ -20,48 +20,105 @@ class Menu extends Component {
             additional content. This content is a little bit longer.
               </Card.Text>
         </Card.ImgOverlay>
-        
+
         <div className="row">
           <div className="col-12">
             <Accordion>
-                <Card.Header>
-                  <Accordion.Toggle as={Button} variant="light" eventKey="1" className="d-flex align-items-end flex-column">
-                    View Menu
+              <Card.Header>
+                <Accordion.Toggle as={Button} variant="light" eventKey="1" className="d-flex align-items-end flex-column">
+                  View Menu
                   </Accordion.Toggle>
-                </Card.Header>
-                <Accordion.Collapse eventKey="1">
-                  <Card>
-                    <Card.Body>Hello! I'm another body</Card.Body>
-                    <Card.Footer>
-                      <Form.Group controlId="exampleForm.ControlSelect1">
-                        <Form.Label className="text-dark">Number of Guests</Form.Label>
-                        <Form.Control as="select" className="mb-2">
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                        </Form.Control>
-                        <Accordion.Toggle as={Button} variant="secondary" type="submit" className="btn-block mb-3" >
-                          Book Now
-                          </Accordion.Toggle>
-                        <Accordion.Collapse eventKey="1">
-                          <Booking>
-                          </Booking>
-                          </Accordion.Collapse>
-                        </Form.Group>
-                        </Card.Footer>
+              </Card.Header>
+              <AccordionCollapse eventKey="1">
+                <Card>
+                  <Card.Body>Hello! I'm another body</Card.Body>
+                  <Card.Footer>
+                    <Form.Group controlId="exampleForm.ControlSelect1">
+                      <Form.Label className="text-dark">Number of Guests</Form.Label>
+                      <Form.Control as="select" className="mb-2">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </Form.Control>
+                      <Accordion.Toggle as={Button} variant="secondary" type="submit" eventKey="1" className="btn-block mb-3" >
+                        Book Now
+                  </Accordion.Toggle>
+                      <AccordionCollapse eventKey="1">
+                        <Card>
+                          <Card.Body>
+                            <Form>
+                              <Row>
+                                <Col>
+                                  <Form.Control placeholder="First name" />
+                                </Col>
+                                <Col>
+                                  <Form.Control placeholder="Last name" />
+                                </Col>
+                              </Row>
+                              <Row>
+                                <Col>
+                                  <Form.Group controlId="formGroupEmail">
+                                    <Form.Label></Form.Label>
+                                    <Form.Control type="email" placeholder="Email Address" />
+                                  </Form.Group>
+                                </Col>
+                              </Row>
+                              <Row>
+                                <Col>
+                                  <Form.Group controlId="formGroupEmail">
+                                    <Form.Control type="email" placeholder="Address 1" />
+                                  </Form.Group>
+                                </Col>
+                              </Row>
+                              <Row>
+                                <Col>
+                                  <Form.Group controlId="formGroupEmail">
+                                    <Form.Control type="email" placeholder="Address 2" />
+                                  </Form.Group>
+                                </Col>
+                              </Row>
+                              <Row>
+                                <Col>
+                                  <Form.Control placeholder="City" />
+                                </Col>
+                                <Col>
+                                  <Form.Control placeholder="Postcode" />
+                                </Col>
+                              </Row>
+                              <Row>
+                                <Col>
+                                  <Form.Group controlId="formGroupEmail">
+                                    <Form.Label></Form.Label>
+                                    <Form.Control type="email" placeholder="Contact Number" />
+                                  </Form.Group>
+                                </Col>
+                              </Row>
+                            </Form>
+                          </Card.Body>
+                          <Card.Footer>
+                            <Form.Group controlId="exampleForm.ControlSelect1">
+                              <Button variant="secondary" type="submit" className="btn-block mb-3" >
+                                Confirm
+                          </Button>
+                            </Form.Group>
+                          </Card.Footer>
                         </Card>
-                        </Accordion.Collapse>
-                        </Accordion>
-                        </div>
-                        </div>
-                        </Card>
-                  
+                      </AccordionCollapse>
+                    </Form.Group>
+                  </Card.Footer>
+                </Card>
+              </AccordionCollapse>
+            </Accordion>
+          </div>
+        </div>
+      </Card>
 
 
-                        );
-                      } 
-                    }
-                    
+
+    );
+  }
+}
+
 export default Menu;
