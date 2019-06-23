@@ -31,7 +31,23 @@ class Search extends Component {
       })
     }
 
-    
+    handleClick = () => {
+
+      const searchMenus = {
+        Cusine: this.state.Cusine,
+        Budget: this.state.Budget,
+        Date: this.state.Date,
+        
+      };
+      
+      if (searchMenus.Cusine !== "Cusine" && searchMenus.Budget !== "Budget" && searchMenus.Date !== ""){ 
+      
+        this.props.searchMenus(searchMenus);
+        this.setState({
+          text: ''
+        });
+      
+    }}
 
 
 

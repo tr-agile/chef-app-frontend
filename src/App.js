@@ -24,6 +24,19 @@ class App extends Component  {
 
 }
 
+search = (searchMenus) => {
+
+  alert(JSON.stringify(searchMenus));
+ 
+  const searchResult = this.state.Menu.filter();
+  searchResult.push(searchMenus);
+
+    this.setState({
+    tasks: searchResult
+  });
+}
+
+
 
 
 render() {
