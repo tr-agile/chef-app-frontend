@@ -27,6 +27,7 @@ class Menu extends Component {
                     View Menu
                   </Accordion.Toggle>
                 </Card.Header>
+                
                 <Accordion.Collapse eventKey="1">
                   <Card>                  
                     <Card.Body>Hello! I'm another body</Card.Body>

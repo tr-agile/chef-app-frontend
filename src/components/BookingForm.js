@@ -23,7 +23,6 @@ class Booking extends Component {
                 additional content. This content is a little bit longer.
               </Card.Text>              
           </Card.ImgOverlay>
-
         <div className="row">
           <div className="col-12">
             <Accordion> 

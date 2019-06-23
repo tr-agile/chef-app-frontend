@@ -8,7 +8,24 @@ import Menu from './components/Menu';
 import Booking from './components/BookingForm';
 
 
-function App() {
+
+
+class App extends Component {
+
+  state = {
+
+    MENU: [
+  
+      {chefId: 1, typeId: 1, menuCuisine: "French",  menuMeals:"Starter: Prawn Salad, Main: Beef Shifado, Dessert: Caramel Cheesecake", menuImageFPath:"https://unsplash.com/photos/b7-L6hzNSeo", menuDietReqs:"Normal"}
+  
+    ]
+  
+  }
+  
+
+
+
+
   return (
     <div className="App">
      <div className="conatiner " id="topContainer">
