@@ -3,6 +3,41 @@ import Button from 'react-bootstrap/Button';
 
 
 class Search extends Component {
+
+  state = {
+    Cusine: '',
+    Budget: '',
+    Date: '',
+    }
+
+    handleCusineChange = (event) => {
+      this.setState({
+        Cusine: event.target.value
+  
+      })
+    }
+
+    handleBudgetChange = (event) => {
+      this.setState({
+        Budget: event.target.value
+  
+      })
+    }
+
+    handleDateChange = (event) => {
+      this.setState({
+        Date: event.target.value
+  
+      })
+    }
+
+    
+
+
+
+
+
+
   render() {
     return (
      
@@ -11,7 +46,7 @@ class Search extends Component {
           
           <div className="col-3">
           <div className="form-group">            
-            <select className="form-control" id="exampleFormControlSelect1" >
+            <select className="form-control" id="Cusine" >
               <option>Cusine</option>
               <option>All</option>
               <option>French</option>
@@ -23,8 +58,9 @@ class Search extends Component {
           </div>
           <div className="col-3">
           <div className="form-group">            
-            <select className="form-control" id="exampleFormControlSelect1" >
+            <select className="form-control" id="Budget" >
               <option>Budget</option>
+              <option>All</option>
               <option>Simple - £45 pp</option>
               <option>Premier - £65 pp</option>
               <option>Michelin - £95 pp</option>
@@ -33,7 +69,7 @@ class Search extends Component {
           </div>
           </div>
           <div class="col-3">
-            <input type="date" class="form-control" placeholder="Date"/>
+            <input type="Date" class="form-control" placeholder="Date"/>
           </div>
           <div className="col-3">
             <Button variant="secondary" type="submit" className="btn-block mb-3" >

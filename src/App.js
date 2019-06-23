@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import Steps from './components/Steps';
 import Search from './components/Search';
@@ -10,21 +10,23 @@ import Booking from './components/BookingForm';
 
 
 
-class App extends Component {
+class App extends Component  {
 
-  state = {
+ state = {
 
-    MENU: [
-  
-      {chefId: 1, typeId: 1, menuCuisine: "French",  menuMeals:"Starter: Prawn Salad, Main: Beef Shifado, Dessert: Caramel Cheesecake", menuImageFPath:"https://unsplash.com/photos/b7-L6hzNSeo", menuDietReqs:"Normal"}
-  
-    ]
-  
-  }
-  
+  Menu: [
+
+    {chefId: 1, typeId: 1, menuCuisine: "French",  menuMeals:"Starter: Prawn Salad, Main: Beef Shifado, Dessert: Caramel Cheesecake", menuImageFPath:"https://unsplash.com/photos/b7-L6hzNSeo", menuDietReqs:"Normal"},
+
+    {chefId: 2, typeId: 2, menuCuisine: "English",  menuMeals:"Starter: Roasted Duck, Main: Celeriac Soup, Dessert: Pomegranate Salad", menuImageFPath:"https://unsplash.com/photos/4Q_xlBOaCso", menuDietReqs:"Gluten Free"}   
+
+  ]
+
+}
 
 
 
+render() {
 
   return (
     <div className="App">
@@ -44,8 +46,11 @@ class App extends Component {
       <Search/>
       <br/>       
       <div className="row-100 d-flex justify-content-center">              
-        <div className="col-5">      
-          <Menu/>
+        <div className="col-5">
+        {this.state.Menu.map((item, index) => {
+                return <Menu Menu={item} key={index} chefId={item.chefId}/>
+            })}      
+          
         </div>        
         <div className="col-5">        
           <Booking/> 
@@ -54,6 +59,7 @@ class App extends Component {
      </div>
     </div>
   );
+}
 }
 
 export default App;

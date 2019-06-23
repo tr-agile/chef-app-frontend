@@ -6,10 +6,13 @@ import Accordion from 'react-bootstrap/Accordion';
 
 
 class Menu extends Component {
+
+    
+
   render() {
     return (
-        <Card className="bg-light text-white m-4">
-        <Card.Img src="https://via.placeholder.com/150x74" alt="Card image" />
+        <Card className="bg-light text-dark m-4">
+        <Card.Img src={this.props.Menu.menuImageFPath} alt="Card image" />
           <Card.ImgOverlay>
             <Card.Title>Card title</Card.Title>
               <Card.Text>
@@ -30,7 +33,7 @@ class Menu extends Component {
                 
                 <Accordion.Collapse eventKey="1">
                   <Card>                  
-                    <Card.Body>Hello! I'm another body</Card.Body>
+                    <Card.Body>{this.props.Menu.menuMeals}</Card.Body>
                     <Card.Footer>
                       <Form.Group controlId="exampleForm.ControlSelect1">                        
                         <Form.Label className="text-dark">Number of Guests</Form.Label>    
