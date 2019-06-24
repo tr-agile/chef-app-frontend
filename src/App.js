@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import Steps from './components/Steps';
 import Search from './components/Search';
@@ -8,7 +8,99 @@ import Menu from './components/Menu';
 import Booking from './components/BookingForm';
 
 
-function App() {
+
+
+class App extends Component  {
+
+ state = {
+
+  Menu: [
+
+    {chefId: 1, typeId: 1, menuCuisine: "French",  menuMeals:"Starter: Prawn Salad, Main: Beef Shifado, Dessert: Caramel Cheesecake", menuImageFPath:"https://images.unsplash.com/photo-1556710807-81aa7ea511f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1083&q=80", menuDietReqs:"Normal"},
+
+    {chefId: 2, typeId: 2, menuCuisine: "English",  menuMeals:"Starter: Roasted Duck, Main: Celeriac Soup, Dessert: Pomegranate Salad", menuImageFPath:"https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80", menuDietReqs:"Gluten Free"},
+    
+    {chefId: 1, typeId: 1, menuCuisine: "French",  menuMeals:"Starter: Prawn Salad, Main: Beef Shifado, Dessert: Caramel Cheesecake", menuImageFPath:"https://images.unsplash.com/photo-1556710807-81aa7ea511f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1083&q=80", menuDietReqs:"Normal"},
+
+    {chefId: 2, typeId: 2, menuCuisine: "English",  menuMeals:"Starter: Roasted Duck, Main: Celeriac Soup, Dessert: Pomegranate Salad", menuImageFPath:"https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80", menuDietReqs:"Gluten Free"},
+
+    {chefId: 2, typeId: 2, menuCuisine: "English",  menuMeals:"Starter: Roasted Duck, Main: Celeriac Soup, Dessert: Pomegranate Salad", menuImageFPath:"https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80", menuDietReqs:"Gluten Free"},
+
+    {chefId: 1, typeId: 1, menuCuisine: "French",  menuMeals:"Starter: Prawn Salad, Main: Beef Shifado, Dessert: Caramel Cheesecake", menuImageFPath:"https://images.unsplash.com/photo-1556710807-81aa7ea511f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1083&q=80", menuDietReqs:"Normal"},
+    {chefId: 1, typeId: 1, menuCuisine: "French",  menuMeals:"Starter: Prawn Salad, Main: Beef Shifado, Dessert: Caramel Cheesecake", menuImageFPath:"https://images.unsplash.com/photo-1556710807-81aa7ea511f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1083&q=80", menuDietReqs:"Normal"},
+    {chefId: 2, typeId: 2, menuCuisine: "English",  menuMeals:"Starter: Roasted Duck, Main: Celeriac Soup, Dessert: Pomegranate Salad", menuImageFPath:"https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80", menuDietReqs:"Gluten Free"},
+
+    {chefId: 2, typeId: 2, menuCuisine: "English",  menuMeals:"Starter: Roasted Duck, Main: Celeriac Soup, Dessert: Pomegranate Salad", menuImageFPath:"https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80", menuDietReqs:"Gluten Free"}  
+
+
+  ],
+
+  ChefTable: [
+
+      {chefId: 1, chefName: "John Peters", chefContact: "07712345678", chefLocation: "London"},
+
+      {chefId: 2, chefName: "Peter Jones", chefContact: "07722222222", chefLocation: "Manchester"},
+
+      {chefId: 3, chefName: "Tim Smith", chefContact: "07733332222", chefLocation: "Leeds"},
+
+      {chefId: 4, chefName: "Sean Seams", chefContact: "07756567879", chefLocation: "London"},
+
+      {chefId: 5, chefName: "Richard Sent", chefContact: "07712341234", chefLocation: "Manchester"}
+
+  ],
+
+   
+    Cusine: '',
+    Budget: '',
+    Date: '',
+    
+
+
+}
+
+handleCusineChange = (event) => {
+  this.setState({
+    Cusine: event.target.value
+
+  })
+}
+
+handleBudgetChange = (event) => {
+  this.setState({
+    Budget: event.target.value
+
+  })
+}
+
+handleDateChange = (event) => {
+  this.setState({
+    Date: event.target.value
+
+  })
+}
+
+
+// search = (searchMenus) => {
+
+//   alert(JSON.stringify(searchMenus));
+ 
+//   const searchResult = this.state.Menu.filter();
+//   searchResult.push(searchMenus);
+
+//     this.setState({
+//     searchMenus: searchResult
+//   });
+// }
+
+
+
+
+
+
+
+
+render() {
+
   return (
     <div className="App">
      <div className="conatiner " id="topContainer">
@@ -26,17 +118,19 @@ function App() {
       </div>    
       <Search/>
       <br/>       
-      <div className="row-100 d-flex justify-content-center">              
-        <div className="col-5">      
-          <Menu/>
-        </div>        
-        <div className="col-5">        
-          <Booking/> 
+      <div className="row-100 d-flex justify-content-center">   
+        
+       <div className="card-columns  mr-4">
+        {this.state.Menu.map((item, index) => {
+                return <Menu Menu={item} key={index} chefId={item.chefId}/>
+            })}      
         </div>
+        
       </div>      
      </div>
     </div>
   );
+}
 }
 
 export default App;

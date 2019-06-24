@@ -3,6 +3,18 @@ import Button from 'react-bootstrap/Button';
 
 
 class Search extends Component {
+
+ 
+
+
+
+   
+
+
+
+
+
+
   render() {
     return (
      
@@ -11,7 +23,7 @@ class Search extends Component {
           
           <div className="col-3">
           <div className="form-group">            
-            <select className="form-control" id="exampleFormControlSelect1" >
+            <select className="form-control" id="Cusine" onChange={this.props.handleCusineChange}>
               <option>Cusine</option>
               <option>All</option>
               <option>French</option>
@@ -23,8 +35,9 @@ class Search extends Component {
           </div>
           <div className="col-3">
           <div className="form-group">            
-            <select className="form-control" id="exampleFormControlSelect1" >
+            <select className="form-control" id="Budget" onChange={this.props.handleBudgetChange} >
               <option>Budget</option>
+              <option>All</option>
               <option>Simple - £45 pp</option>
               <option>Premier - £65 pp</option>
               <option>Michelin - £95 pp</option>
@@ -33,10 +46,10 @@ class Search extends Component {
           </div>
           </div>
           <div class="col-3">
-            <input type="date" class="form-control" placeholder="Date"/>
+            <input type="Date" class="form-control" placeholder="Date" onChange={this.props.handleDateChange}/>
           </div>
           <div className="col-3">
-            <Button variant="secondary" type="submit" className="btn-block mb-3" >
+            <Button variant="secondary" type="submit"   className="btn-block mb-3" >
               Search
             </Button>
           </div>
