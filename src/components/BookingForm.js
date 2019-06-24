@@ -9,7 +9,17 @@ import Col from 'react-bootstrap/Col';
 
 
 
+// <Card>                  
+//                     <Card.Body>Congratulations Booking Confirmed! We Look Forward to Seeing You</Card.Body>
 
+//                     <Card.Footer>
+//                       <Form.Group controlId="exampleForm.ControlSelect1">                         
+//                           <Button id="bookNow" variant="secondary" type="submit" className="btn-block mt-3" onClick={this.handleBookNowClick} >
+//                             Book Now
+//                           </Button>
+//                       </Form.Group>
+//                     </Card.Footer>                 
+//                   </Card>
 
 class Booking extends Component {
   render() {
@@ -23,7 +33,6 @@ class Booking extends Component {
                 additional content. This content is a little bit longer.
               </Card.Text>              
           </Card.ImgOverlay>
-
         <div className="row">
           <div className="col-12">
             <Accordion> 
@@ -82,7 +91,14 @@ class Booking extends Component {
                               <Form.Control type="email" placeholder="Contact Number" />
                             </Form.Group>
                           </Col>
-                        </Row>                                 
+                        </Row>                          
+                          <Form.Control as="select" className="mb-2">
+                            <option>Number of Guests</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                          </Form.Control>                                
                       </Form>
                     </Card.Body>
                     <Card.Footer>

@@ -3,13 +3,40 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Accordion from 'react-bootstrap/Accordion';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 class Menu extends Component {
+
+    state = {
+      bookNow: false,
+      confirm: false
+      
+    }
+
+    handleBookNowClick = () => { 
+      this.setState({
+        bookNow: true
+      })
+    }
+
+    handleConfirmClick = () => { 
+      this.setState({
+        confirm: true
+      })
+    }
+
+
+   
+    
+
+
   render() {
     return (
-        <Card className="bg-light text-white m-4">
-        <Card.Img src="https://via.placeholder.com/150x74" alt="Card image" />
+        
+        <Card className="bg-light text-dark m-4">
+        <Card.Img src={this.props.Menu.menuImageFPath} alt="Card image" />
           <Card.ImgOverlay>
             <Card.Title>Card title</Card.Title>
               <Card.Text>
@@ -27,31 +54,115 @@ class Menu extends Component {
                     View Menu
                   </Accordion.Toggle>
                 </Card.Header>
+                
                 <Accordion.Collapse eventKey="1">
-                  <Card>                  
-                    <Card.Body>Hello! I'm another body</Card.Body>
+                              
+                  
+                  { this.state.bookNow ? this.state.confirm ?
+
+                  
+
+                    <Card>                  
+                    <Card.Body>Congratulations Booking Confirmed! We Look Forward to Seeing You!</Card.Body>
+
                     <Card.Footer>
-                      <Form.Group controlId="exampleForm.ControlSelect1">                        
-                        <Form.Label className="text-dark">Number of Guests</Form.Label>    
+                      <Form.Group controlId="exampleForm.ControlSelect1">                         
+                          
+                      </Form.Group>
+                    </Card.Footer>                 
+                  </Card>
+
+                  :
+                  <Card>                  
+                    <Card.Body>
+                      <Form>
+                        <Row>
+                          <Col>
+                            <Form.Control placeholder="First name" />
+                          </Col>
+                          <Col>
+                            <Form.Control placeholder="Last name" />
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col>
+                            <Form.Group controlId="formGroupEmail">
+                              <Form.Label></Form.Label>                              
+                              <Form.Control type="email" placeholder="Email Address" />
+                            </Form.Group>
+                          </Col>
+                        </Row>     
+                        <Row>
+                          <Col>
+                            <Form.Group controlId="formGroupEmail">                              
+                              <Form.Control type="email" placeholder="Address 1" />
+                            </Form.Group>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col>
+                            <Form.Group controlId="formGroupEmail">                              
+                              <Form.Control type="email" placeholder="Address 2" />
+                            </Form.Group>
+                          </Col>
+                        </Row>   
+                        <Row>
+                          <Col>
+                            <Form.Control placeholder="City" />
+                          </Col>
+                          <Col>
+                            <Form.Control placeholder="Postcode" />
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col>
+                            <Form.Group controlId="formGroupEmail">
+                              <Form.Label></Form.Label>                              
+                              <Form.Control type="email" placeholder="Contact Number" />
+                            </Form.Group>
+                          </Col>
+                        </Row>                          
                           <Form.Control as="select" className="mb-2">
-                            <option>1</option>
+                            <option>Number of Guests</option>
                             <option>2</option>
                             <option>3</option>
                             <option>4</option>
                             <option>5</option>
-                          </Form.Control>
-                          <Button variant="secondary" type="submit" className="btn-block mb-3" >
+                          </Form.Control>                                
+                      </Form>
+                    </Card.Body>
+                    <Card.Footer>
+                      <Form.Group controlId="exampleForm.ControlSelect1">                        
+                          <Button id="confirm" variant="secondary" type="submit" className="btn-block mt-3" onClick={this.handleConfirmClick}>
+                            Confirm
+                          </Button>
+                      </Form.Group>
+                    </Card.Footer>                 
+                  </Card> 
+                  
+                  : 
+                  
+                  <Card>                  
+                    <Card.Body>{this.props.Menu.menuMeals}</Card.Body>
+
+                    <Card.Footer>
+                      <Form.Group controlId="exampleForm.ControlSelect1">                         
+                          <Button id="bookNow" variant="secondary" type="submit" className="btn-block mt-3" onClick={this.handleBookNowClick} >
                             Book Now
                           </Button>
                       </Form.Group>
                     </Card.Footer>                 
-                  </Card>
+                  </Card>}
+
                 </Accordion.Collapse>
               </Card>
+
+              
             </Accordion>
           </div>
         </div>          
       </Card>  
+     
     );
   } 
 }
