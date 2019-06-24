@@ -8,10 +8,8 @@ class Steps extends Component {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=750&w=1260"
+          src="https://via.placeholder.com/450x225"
           alt="First slide"
-          height='600px'
-          width="450px"
         />
         <Carousel.Caption>
           <h3>First slide label</h3>
@@ -21,10 +19,8 @@ class Steps extends Component {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://images.pexels.com/photos/349609/pexels-photo-349609.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=750&w=1260"
+          src="https://via.placeholder.com/450x225"
           alt="First slide"
-          height='600px'
-          width="450px"
         />
         <Carousel.Caption>
           <h3>Second slide label</h3>
@@ -34,10 +30,8 @@ class Steps extends Component {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://images.pexels.com/photos/1756064/pexels-photo-1756064.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+          src="https://via.placeholder.com/450x225"
           alt="First slide"
-          height='600px'
-          width="450px"
         />
         <Carousel.Caption>
           <h3>Third slide label</h3>
