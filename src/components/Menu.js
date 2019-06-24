@@ -47,12 +47,29 @@ class Menu extends Component {
 
         <div className="row">
           <div className="col-12">
-            <Accordion> 
-              <Card>
-                <Card.Header>
-                  <Accordion.Toggle as={Button} variant="light" eventKey="1"className="d-flex align-items-end flex-column">
-                    View Menu
+            <Accordion className="Accordion1">
+              <Card.Header>
+                <Accordion.Toggle as={Button} variant="light" eventKey="0" className="d-flex align-items-end flex-column">
+                  View Menu
                   </Accordion.Toggle>
+              </Card.Header>
+              <AccordionCollapse eventKey="0">
+                <Card>
+                  <Card.Body>Hello! I'm another body</Card.Body>
+                  <Card.Footer>
+                    <Form.Group controlId="exampleForm.ControlSelect1">
+                      <Form.Label className="text-dark">Number of Guests</Form.Label>
+                      <Form.Control as="select" className="mb-2">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </Form.Control>
+                      <Accordion.Toggle as={Button} variant="secondary" type="submit" eventKey="1" className="btn-block mb-3" >
+                        Book Now
+                  </Accordion.Toggle>
+
                 </Card.Header>
                 
                 <Accordion.Collapse eventKey="1">
@@ -164,7 +181,7 @@ class Menu extends Component {
       </Card>  
      
     );
-  } 
+  }
 }
 
 export default Menu;
