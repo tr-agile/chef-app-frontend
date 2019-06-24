@@ -79,6 +79,18 @@ handleDateChange = (event) => {
   })
 }
 
+addBooking = (newBooking) => {
+
+  alert(JSON.stringify(newBooking));
+ 
+  const newBookings = this.state.Booking.slice();
+  newBookings.push(newBooking);
+
+    this.setState({
+    Booking: newBookings
+  });
+}
+
 
 // search = (searchMenus) => {
 
