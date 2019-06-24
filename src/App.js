@@ -20,10 +20,14 @@ class App extends Component  {
 
     {chefId: 2, typeId: 2, menuCuisine: "English",  menuMeals:"Starter: Roasted Duck, Main: Celeriac Soup, Dessert: Pomegranate Salad", menuImageFPath:"https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80", menuDietReqs:"Gluten Free"},
     
-    {chefId: 2, typeId: 2, menuCuisine: "English",  menuMeals:"Starter: Roasted Duck, Main: Celeriac Soup, Dessert: Pomegranate Salad", menuImageFPath:"https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80", menuDietReqs:"Gluten Free"},
+    {chefId: 1, typeId: 1, menuCuisine: "French",  menuMeals:"Starter: Prawn Salad, Main: Beef Shifado, Dessert: Caramel Cheesecake", menuImageFPath:"https://images.unsplash.com/photo-1556710807-81aa7ea511f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1083&q=80", menuDietReqs:"Normal"},
 
     {chefId: 2, typeId: 2, menuCuisine: "English",  menuMeals:"Starter: Roasted Duck, Main: Celeriac Soup, Dessert: Pomegranate Salad", menuImageFPath:"https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80", menuDietReqs:"Gluten Free"},
 
+    {chefId: 2, typeId: 2, menuCuisine: "English",  menuMeals:"Starter: Roasted Duck, Main: Celeriac Soup, Dessert: Pomegranate Salad", menuImageFPath:"https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80", menuDietReqs:"Gluten Free"},
+
+    {chefId: 1, typeId: 1, menuCuisine: "French",  menuMeals:"Starter: Prawn Salad, Main: Beef Shifado, Dessert: Caramel Cheesecake", menuImageFPath:"https://images.unsplash.com/photo-1556710807-81aa7ea511f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1083&q=80", menuDietReqs:"Normal"},
+    {chefId: 1, typeId: 1, menuCuisine: "French",  menuMeals:"Starter: Prawn Salad, Main: Beef Shifado, Dessert: Caramel Cheesecake", menuImageFPath:"https://images.unsplash.com/photo-1556710807-81aa7ea511f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1083&q=80", menuDietReqs:"Normal"},
     {chefId: 2, typeId: 2, menuCuisine: "English",  menuMeals:"Starter: Roasted Duck, Main: Celeriac Soup, Dessert: Pomegranate Salad", menuImageFPath:"https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80", menuDietReqs:"Gluten Free"},
 
     {chefId: 2, typeId: 2, menuCuisine: "English",  menuMeals:"Starter: Roasted Duck, Main: Celeriac Soup, Dessert: Pomegranate Salad", menuImageFPath:"https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80", menuDietReqs:"Gluten Free"}  
@@ -43,21 +47,51 @@ class App extends Component  {
 
       {chefId: 5, chefName: "Richard Sent", chefContact: "07712341234", chefLocation: "Manchester"}
 
-  ]
+  ],
+
+   
+    Cusine: '',
+    Budget: '',
+    Date: '',
+    
+
+
+}
+
+handleCusineChange = (event) => {
+  this.setState({
+    Cusine: event.target.value
+
+  })
+}
+
+handleBudgetChange = (event) => {
+  this.setState({
+    Budget: event.target.value
+
+  })
+}
+
+handleDateChange = (event) => {
+  this.setState({
+    Date: event.target.value
+
+  })
 }
 
 
-search = (searchMenus) => {
+// search = (searchMenus) => {
 
-  alert(JSON.stringify(searchMenus));
+//   alert(JSON.stringify(searchMenus));
  
-  const searchResult = this.state.Menu.filter();
-  searchResult.push(searchMenus);
+//   const searchResult = this.state.Menu.filter();
+//   searchResult.push(searchMenus);
 
-    this.setState({
-    searchMenus: searchResult
-  });
-}
+//     this.setState({
+//     searchMenus: searchResult
+//   });
+// }
+
 
 
 
@@ -86,7 +120,7 @@ render() {
       <br/>       
       <div className="row-100 d-flex justify-content-center">   
         
-       <div className="card-columns">
+       <div className="card-columns  mr-4">
         {this.state.Menu.map((item, index) => {
                 return <Menu Menu={item} key={index} chefId={item.chefId}/>
             })}      

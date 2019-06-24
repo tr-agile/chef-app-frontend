@@ -4,50 +4,11 @@ import Button from 'react-bootstrap/Button';
 
 class Search extends Component {
 
-  state = {
-    Cusine: '',
-    Budget: '',
-    Date: '',
-    }
+ 
 
-    handleCusineChange = (event) => {
-      this.setState({
-        Cusine: event.target.value
-  
-      })
-    }
 
-    handleBudgetChange = (event) => {
-      this.setState({
-        Budget: event.target.value
-  
-      })
-    }
 
-    handleDateChange = (event) => {
-      this.setState({
-        Date: event.target.value
-  
-      })
-    }
-
-    handleClick = () => {
-
-      const searchMenus = {
-        Cusine: this.state.Cusine,
-        Budget: this.state.Budget,
-        Date: this.state.Date,
-        
-      };
-      
-      if (searchMenus.Cusine !== "Cusine" && searchMenus.Budget !== "Budget" && searchMenus.Date !== ""){ 
-      
-        this.props.searchMenus(searchMenus);
-        this.setState({
-          text: ''
-        });
-      
-    }}
+   
 
 
 
@@ -62,7 +23,7 @@ class Search extends Component {
           
           <div className="col-3">
           <div className="form-group">            
-            <select className="form-control" id="Cusine" onChange={this.handleCusineChange}>
+            <select className="form-control" id="Cusine" onChange={this.props.handleCusineChange}>
               <option>Cusine</option>
               <option>All</option>
               <option>French</option>
@@ -74,7 +35,7 @@ class Search extends Component {
           </div>
           <div className="col-3">
           <div className="form-group">            
-            <select className="form-control" id="Budget" onChange={this.handleBudgetChange} >
+            <select className="form-control" id="Budget" onChange={this.props.handleBudgetChange} >
               <option>Budget</option>
               <option>All</option>
               <option>Simple - £45 pp</option>
@@ -85,10 +46,10 @@ class Search extends Component {
           </div>
           </div>
           <div class="col-3">
-            <input type="Date" class="form-control" placeholder="Date" onChange={this.handleDateChange}/>
+            <input type="Date" class="form-control" placeholder="Date" onChange={this.props.handleDateChange}/>
           </div>
           <div className="col-3">
-            <Button variant="secondary" type="submit"  onClick={this.handleClick} className="btn-block mb-3" >
+            <Button variant="secondary" type="submit"   className="btn-block mb-3" >
               Search
             </Button>
           </div>
