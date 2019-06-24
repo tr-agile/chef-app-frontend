@@ -81,7 +81,14 @@ class Booking extends Component {
                               <Form.Control type="email" placeholder="Contact Number" />
                             </Form.Group>
                           </Col>
-                        </Row>                                 
+                        </Row>                          
+                          <Form.Control as="select" className="mb-2">
+                            <option>Number of Guests</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                          </Form.Control>                                
                       </Form>
                     </Card.Body>
                     <Card.Footer>
