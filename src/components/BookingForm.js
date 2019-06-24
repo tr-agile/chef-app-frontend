@@ -9,7 +9,17 @@ import Col from 'react-bootstrap/Col';
 
 
 
+// <Card>                  
+//                     <Card.Body>Congratulations Booking Confirmed! We Look Forward to Seeing You</Card.Body>
 
+//                     <Card.Footer>
+//                       <Form.Group controlId="exampleForm.ControlSelect1">                         
+//                           <Button id="bookNow" variant="secondary" type="submit" className="btn-block mt-3" onClick={this.handleBookNowClick} >
+//                             Book Now
+//                           </Button>
+//                       </Form.Group>
+//                     </Card.Footer>                 
+//                   </Card>
 
 class Booking extends Component {
   render() {

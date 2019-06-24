@@ -18,10 +18,14 @@ class App extends Component  {
 
     {chefId: 1, typeId: 1, menuCuisine: "French",  menuMeals:"Starter: Prawn Salad, Main: Beef Shifado, Dessert: Caramel Cheesecake", menuImageFPath:"https://images.unsplash.com/photo-1556710807-81aa7ea511f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1083&q=80", menuDietReqs:"Normal"},
 
-    {chefId: 2, typeId: 2, menuCuisine: "English",  menuMeals:"Starter: Roasted Duck, Main: Celeriac Soup, Dessert: Pomegranate Salad", menuImageFPath:"https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80", menuDietReqs:"Gluten Free"},   
-
-    {chefId: 2, typeId: 2, menuCuisine: "English",  menuMeals:"Starter: Roasted Duck, Main: Celeriac Soup, Dessert: Pomegranate Salad", menuImageFPath:"https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80", menuDietReqs:"Gluten Free"},  
+    {chefId: 2, typeId: 2, menuCuisine: "English",  menuMeals:"Starter: Roasted Duck, Main: Celeriac Soup, Dessert: Pomegranate Salad", menuImageFPath:"https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80", menuDietReqs:"Gluten Free"},
     
+    {chefId: 2, typeId: 2, menuCuisine: "English",  menuMeals:"Starter: Roasted Duck, Main: Celeriac Soup, Dessert: Pomegranate Salad", menuImageFPath:"https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80", menuDietReqs:"Gluten Free"},
+
+    {chefId: 2, typeId: 2, menuCuisine: "English",  menuMeals:"Starter: Roasted Duck, Main: Celeriac Soup, Dessert: Pomegranate Salad", menuImageFPath:"https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80", menuDietReqs:"Gluten Free"},
+
+    {chefId: 2, typeId: 2, menuCuisine: "English",  menuMeals:"Starter: Roasted Duck, Main: Celeriac Soup, Dessert: Pomegranate Salad", menuImageFPath:"https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80", menuDietReqs:"Gluten Free"},
+
     {chefId: 2, typeId: 2, menuCuisine: "English",  menuMeals:"Starter: Roasted Duck, Main: Celeriac Soup, Dessert: Pomegranate Salad", menuImageFPath:"https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80", menuDietReqs:"Gluten Free"}  
 
 
@@ -80,16 +84,14 @@ render() {
       </div>    
       <Search/>
       <br/>       
-      <div className="row-100 d-flex justify-content-center">              
-        <div className="col-5">
+      <div className="row-100 d-flex justify-content-center">   
+        
+       <div className="card-columns">
         {this.state.Menu.map((item, index) => {
                 return <Menu Menu={item} key={index} chefId={item.chefId}/>
             })}      
-          
-        </div>        
-        <div className="col-5">        
-          <Booking/> 
         </div>
+        
       </div>      
      </div>
     </div>

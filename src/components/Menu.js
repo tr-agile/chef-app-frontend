@@ -10,7 +10,9 @@ import Col from 'react-bootstrap/Col';
 class Menu extends Component {
 
     state = {
-      bookNow: false
+      bookNow: false,
+      confirm: false
+      
     }
 
     handleBookNowClick = () => { 
@@ -19,12 +21,20 @@ class Menu extends Component {
       })
     }
 
+    handleConfirmClick = () => { 
+      this.setState({
+        confirm: true
+      })
+    }
+
+
    
     
 
 
   render() {
     return (
+        
         <Card className="bg-light text-dark m-4">
         <Card.Img src={this.props.Menu.menuImageFPath} alt="Card image" />
           <Card.ImgOverlay>
@@ -46,10 +56,23 @@ class Menu extends Component {
                 </Card.Header>
                 
                 <Accordion.Collapse eventKey="1">
+                              
                   
-                
+                  { this.state.bookNow ? this.state.confirm ?
+
                   
-                  { this.state.bookNow ? 
+
+                    <Card>                  
+                    <Card.Body>Congratulations Booking Confirmed! We Look Forward to Seeing You!</Card.Body>
+
+                    <Card.Footer>
+                      <Form.Group controlId="exampleForm.ControlSelect1">                         
+                          
+                      </Form.Group>
+                    </Card.Footer>                 
+                  </Card>
+
+                  :
                   <Card>                  
                     <Card.Body>
                       <Form>
@@ -110,7 +133,7 @@ class Menu extends Component {
                     </Card.Body>
                     <Card.Footer>
                       <Form.Group controlId="exampleForm.ControlSelect1">                        
-                          <Button variant="secondary" type="submit" className="btn-block mb-3" >
+                          <Button id="confirm" variant="secondary" type="submit" className="btn-block mt-3" onClick={this.handleConfirmClick}>
                             Confirm
                           </Button>
                       </Form.Group>
@@ -139,6 +162,7 @@ class Menu extends Component {
           </div>
         </div>          
       </Card>  
+     
     );
   } 
 }
