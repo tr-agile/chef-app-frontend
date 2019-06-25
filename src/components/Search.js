@@ -8,7 +8,26 @@ class Search extends Component {
 
 
 
-   
+  handleCusineChange = (event) => {
+    this.setState({
+      Cusine: event.target.value
+  
+    })
+  }
+  
+  handleBudgetChange = (event) => {
+    this.setState({
+      Budget: event.target.value
+  
+    })
+  }
+  
+  handleDateChange = (event) => {
+    this.setState({
+      Date: event.target.value
+  
+    })
+  }
 
 
 
@@ -23,7 +42,7 @@ class Search extends Component {
           
           <div className="col-3">
           <div className="form-group">            
-            <select className="form-control" id="Cusine" onChange={this.props.handleCusineChange}>
+            <select className="form-control" id="Cusine" onChange={this.handleCusineChange}>
               <option>Cusine</option>
               <option>All</option>
               <option>French</option>
@@ -35,7 +54,7 @@ class Search extends Component {
           </div>
           <div className="col-3">
           <div className="form-group">            
-            <select className="form-control" id="Budget" onChange={this.props.handleBudgetChange} >
+            <select className="form-control" id="Budget" onChange={this.handleBudgetChange} >
               <option>Budget</option>
               <option>All</option>
               <option>Simple - £45 pp</option>
@@ -45,8 +64,8 @@ class Search extends Component {
             </select>
           </div>
           </div>
-          <div class="col-3">
-            <input type="Date" class="form-control" placeholder="Date" onChange={this.props.handleDateChange}/>
+          <div className="col-3">
+            <input type="Date" className="form-control" placeholder="Date" onChange={this.handleDateChange}/>
           </div>
           <div className="col-3">
             <Button variant="secondary" type="submit"   className="btn-block mb-3" >
