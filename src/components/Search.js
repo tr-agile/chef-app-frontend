@@ -45,8 +45,8 @@ class Search extends Component {
             </select>
           </div>
           </div>
-          <div class="col-3">
-            <input type="Date" class="form-control" placeholder="Date" onChange={this.props.handleDateChange}/>
+          <div className="col-3">
+            <input type="Date" className="form-control" placeholder="Date" onChange={this.props.handleDateChange}/>
           </div>
           <div className="col-3">
             <Button variant="secondary" type="submit"   className="btn-block mb-3" >

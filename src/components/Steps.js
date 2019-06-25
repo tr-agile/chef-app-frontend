@@ -12,7 +12,7 @@ class Steps extends Component {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h1>Select cusine, budget and date</h1>
+          <h1>Select cuisine, budget and date</h1>
          
         </Carousel.Caption>
       </Carousel.Item>

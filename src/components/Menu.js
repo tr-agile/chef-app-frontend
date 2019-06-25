@@ -100,7 +100,9 @@ class Menu extends Component {
       })
     }
 
-    handleClick = () => {
+    // this is the beginging of the function that will push new bookings to the booking table. this needs sanity checking as theres an issue when i confirm booking. I have tracked react on the browser and the changes are recorded when the state changes in the input fields.
+
+    handleConfirmClick = () => {
 
       const newBooking = {
         firstName: this.state.firstName,
@@ -132,7 +134,8 @@ class Menu extends Component {
         <Card className="bg-light text-light m-4">
         <Card.Img src={this.props.Menu.menuImageFPath} alt="Card image" />
           <Card.ImgOverlay>
-            <Card.Title>Card title</Card.Title>
+          {/* <Card.Title><h2>{this.props.chefTable.chefName} </h2></Card.Title> */}
+            <Card.Title><h2>{this.props.Menu.menuCuisine} </h2></Card.Title>           
               <Card.Text>
                 This is a wider card with supporting text below as a natural lead-in to
                 additional content. This content is a little bit longer.
@@ -172,51 +175,51 @@ class Menu extends Component {
                       <Form>
                         <Row>
                           <Col>
-                            <Form.Control placeholder="First name" id="firstName" />
+                            <Form.Control placeholder="First name" id="firstName" onChange={this.handleFirstNameChange} />
                           </Col>
                           <Col>
-                            <Form.Control placeholder="Last name" id="lastName" />
+                            <Form.Control placeholder="Last name" id="lastName" onChange={this.handleLastNameChange} />
                           </Col>
                         </Row>
                         <Row>
                           <Col>
                             <Form.Group >
                               <Form.Label></Form.Label>                              
-                              <Form.Control type="email" placeholder="Email Address" id="email" />
+                              <Form.Control type="email" placeholder="Email Address" id="email" onChange={this.handleEmailChange}/>
                             </Form.Group>
                           </Col>
                         </Row>     
                         <Row>
                           <Col>
                             <Form.Group >                              
-                              <Form.Control type="email" placeholder="Address 1" id="address1" />
+                              <Form.Control type="email" placeholder="Address 1" id="address1" onChange={this.handleAddress1Change}/>
                             </Form.Group>
                           </Col>
                         </Row>
                         <Row>
                           <Col>
                             <Form.Group >                              
-                              <Form.Control type="email" placeholder="Address 2" id="address2"/>
+                              <Form.Control type="email" placeholder="Address 2" id="address2"onChange={this.handleAddress2Change}/>
                             </Form.Group>
                           </Col>
                         </Row>   
                         <Row>
                           <Col>
-                            <Form.Control placeholder="City" id="city"/>
+                            <Form.Control placeholder="City" id="city" onChange={this.handleCityChange}/>
                           </Col>
                           <Col>
-                            <Form.Control placeholder="Postcode" id="postcode" />
+                            <Form.Control placeholder="Postcode" id="postcode"onChange={this.handlePostcodeChange} />
                           </Col>
                         </Row>
                         <Row>
                           <Col>
                             <Form.Group >
                               <Form.Label></Form.Label>                              
-                              <Form.Control type="email" placeholder="Contact Number" id="contactNumber" />
+                              <Form.Control type="email" placeholder="Contact Number" id="contactNumber" onChange={this.handleContactNumberChange}/>
                             </Form.Group>
                           </Col>
                         </Row>                          
-                          <Form.Control as="select" className="mb-2" id="numberOfGuests">
+                          <Form.Control as="select" className="mb-2" id="numberOfGuests" onChange={this.handleNumberOfGuestsChange}>
                             <option>Number of Guests</option>
                             <option>2</option>
                             <option>3</option>
@@ -227,7 +230,7 @@ class Menu extends Component {
                     </Card.Body>
                     <Card.Footer>
                       <Form.Group controlId="exampleForm.ControlSelect1">                        
-                          <Button id="confirm" variant="secondary" type="submit" className="btn-block mt-3" onClick={this.handleConfirmClick}>
+                          <Button id="confirm" variant="secondary" type="submit" className="btn-block mt-3"  onClick={this.handleConfirmClick}>
                             Confirm
                           </Button>
                       </Form.Group>
