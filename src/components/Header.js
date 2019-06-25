@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import Navbar from 'react-bootstrap/Navbar';
+import chefLogo from './Images/chefPrivenoStrap.png'
 
 class Header extends Component {
   render() {
     return (
-    <Navbar bg="light" >
-        <Navbar.Brand>Chef Prive</Navbar.Brand>
+    <Navbar bg="white" >
+        <img src={chefLogo} alt='logo' className='chefLogo' />
     </Navbar>
     );
   } 
