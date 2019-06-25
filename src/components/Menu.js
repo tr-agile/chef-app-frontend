@@ -11,7 +11,17 @@ class Menu extends Component {
 
     state = {
       bookNow: false,
-      confirm: false
+      confirm: false,
+      firstName: "",
+      lastName: "",
+      email: "",
+      address1: "",
+      address2: "",
+      city: "",
+      postcode: "",
+      contactNumber: "",
+      numberOfGuests: "Number of Guests", 
+
       
     }
 
@@ -27,18 +37,105 @@ class Menu extends Component {
       })
     }
 
+    handleFirstNameChange = (event) => {
+      this.setState({
+        firstName: event.target.value
+  
+      })
+    }
 
-   
+    handleLastNameChange = (event) => {
+      this.setState({
+        lastName: event.target.value
+  
+      })
+    }
+
+    handleEmailChange = (event) => {
+      this.setState({
+        email: event.target.value
+  
+      })
+    }
+
+    handleAddress1Change = (event) => {
+      this.setState({
+        address1: event.target.value
+  
+      })
+    }
+
+    handleAddress2Change = (event) => {
+      this.setState({
+        address2: event.target.value
+  
+      })
+    }
+
+    handleCityChange = (event) => {
+      this.setState({
+        city: event.target.value
+  
+      })
+    }
+
+    handlePostcodeChange = (event) => {
+      this.setState({
+        postcode: event.target.value
+  
+      })
+    }
+
+    handleContactNumberChange = (event) => {
+      this.setState({
+        contactNumber: event.target.value
+  
+      })
+    }
+
+    handleNumberOfGuestsChange = (event) => {
+      this.setState({
+        numberOfGuests: event.target.value
+  
+      })
+    }
+
+    // this is the beginging of the function that will push new bookings to the booking table. this needs sanity checking as theres an issue when i confirm booking. I have tracked react on the browser and the changes are recorded when the state changes in the input fields.
+
+    handleConfirmClick = () => {
+
+      const newBooking = {
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        email: this.state.email,
+        address1: this.state.address1,
+        address2: this.state.address2,
+        city: this.state.city,
+        postcode: this.state.postcode,
+        contactNumber: this.state.contactNumber,
+        numberOfGuests: this.state.numberOfGuests, 
+      };
+      
+      if (newBooking.firstName.length > 0 && newBooking.lastName.length > 0 && newBooking.email.length > 0 && newBooking.address1.length > 0 && newBooking.address2.length > 0 && newBooking.city.length > 0 && newBooking.postcode.length > 0 && newBooking.contactNumber.length > 0 && newBooking.numberOfGuests !== "Number of Guests")
+      { 
+      
+      this.props.addBooking(newBooking);
+      this.setState({
+        text: ''
+      });
+    
+  }      }
     
 
 
   render() {
     return (
         
-        <Card className="bg-light text-dark m-4">
+        <Card className="bg-light text-light m-4">
         <Card.Img src={this.props.Menu.menuImageFPath} alt="Card image" />
           <Card.ImgOverlay>
-            <Card.Title>Card title</Card.Title>
+          {/* <Card.Title><h2>{this.props.chefTable.chefName} </h2></Card.Title> */}
+            <Card.Title><h2>{this.props.Menu.menuCuisine} </h2></Card.Title>           
               <Card.Text>
                 This is a wider card with supporting text below as a natural lead-in to
                 additional content. This content is a little bit longer.
@@ -50,7 +147,7 @@ class Menu extends Component {
             <Accordion> 
               <Card>
                 <Card.Header>
-                  <Accordion.Toggle as={Button} variant="light" eventKey="1"className="d-flex align-items-end flex-column">
+                  <Accordion.Toggle as={Button} variant="light" eventKey="1"className="d-flex align-items-end flex-column text-dark">
                     View Menu
                   </Accordion.Toggle>
                 </Card.Header>
@@ -62,7 +159,7 @@ class Menu extends Component {
 
                   
 
-                    <Card>                  
+                    <Card className="text-dark">                  
                     <Card.Body>Congratulations Booking Confirmed! We Look Forward to Seeing You!</Card.Body>
 
                     <Card.Footer>
@@ -73,56 +170,56 @@ class Menu extends Component {
                   </Card>
 
                   :
-                  <Card>                  
+                  <Card className="text-dark">                  
                     <Card.Body>
                       <Form>
                         <Row>
                           <Col>
-                            <Form.Control placeholder="First name" />
+                            <Form.Control placeholder="First name" id="firstName" onChange={this.handleFirstNameChange} />
                           </Col>
                           <Col>
-                            <Form.Control placeholder="Last name" />
+                            <Form.Control placeholder="Last name" id="lastName" onChange={this.handleLastNameChange} />
                           </Col>
                         </Row>
                         <Row>
                           <Col>
-                            <Form.Group controlId="formGroupEmail">
+                            <Form.Group >
                               <Form.Label></Form.Label>                              
-                              <Form.Control type="email" placeholder="Email Address" />
+                              <Form.Control type="email" placeholder="Email Address" id="email" onChange={this.handleEmailChange}/>
                             </Form.Group>
                           </Col>
                         </Row>     
                         <Row>
                           <Col>
-                            <Form.Group controlId="formGroupEmail">                              
-                              <Form.Control type="email" placeholder="Address 1" />
+                            <Form.Group >                              
+                              <Form.Control type="email" placeholder="Address 1" id="address1" onChange={this.handleAddress1Change}/>
                             </Form.Group>
                           </Col>
                         </Row>
                         <Row>
                           <Col>
-                            <Form.Group controlId="formGroupEmail">                              
-                              <Form.Control type="email" placeholder="Address 2" />
+                            <Form.Group >                              
+                              <Form.Control type="email" placeholder="Address 2" id="address2"onChange={this.handleAddress2Change}/>
                             </Form.Group>
                           </Col>
                         </Row>   
                         <Row>
                           <Col>
-                            <Form.Control placeholder="City" />
+                            <Form.Control placeholder="City" id="city" onChange={this.handleCityChange}/>
                           </Col>
                           <Col>
-                            <Form.Control placeholder="Postcode" />
+                            <Form.Control placeholder="Postcode" id="postcode"onChange={this.handlePostcodeChange} />
                           </Col>
                         </Row>
                         <Row>
                           <Col>
-                            <Form.Group controlId="formGroupEmail">
+                            <Form.Group >
                               <Form.Label></Form.Label>                              
-                              <Form.Control type="email" placeholder="Contact Number" />
+                              <Form.Control type="email" placeholder="Contact Number" id="contactNumber" onChange={this.handleContactNumberChange}/>
                             </Form.Group>
                           </Col>
                         </Row>                          
-                          <Form.Control as="select" className="mb-2">
+                          <Form.Control as="select" className="mb-2" id="numberOfGuests" onChange={this.handleNumberOfGuestsChange}>
                             <option>Number of Guests</option>
                             <option>2</option>
                             <option>3</option>
@@ -133,7 +230,7 @@ class Menu extends Component {
                     </Card.Body>
                     <Card.Footer>
                       <Form.Group controlId="exampleForm.ControlSelect1">                        
-                          <Button id="confirm" variant="secondary" type="submit" className="btn-block mt-3" onClick={this.handleConfirmClick}>
+                          <Button id="confirm" variant="secondary" type="submit" className="btn-block mt-3"  onClick={this.handleConfirmClick}>
                             Confirm
                           </Button>
                       </Form.Group>
@@ -142,7 +239,7 @@ class Menu extends Component {
                   
                   : 
                   
-                  <Card>                  
+                  <Card className="text-dark">                  
                     <Card.Body>{this.props.Menu.menuMeals}</Card.Body>
 
                     <Card.Footer>
