@@ -8,8 +8,10 @@ class Steps extends Component {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://via.placeholder.com/450x225"
+          src="https://images.unsplash.com/photo-1556909114-a1d34f47412c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
           alt="First slide"
+          height="550px"
+
         />
         <Carousel.Caption>
           <h1>Select cuisine, budget and date</h1>
