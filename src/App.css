@@ -6,9 +6,21 @@
 
 }
 
+body {
+  font-family: 'Montserrat', sans-serif
+}
+.heading {
+  font-weight: 700;
+}
+.subheading {
+  font-weight: 300;
+}
 
-
-
+h4 {
+  width: auto;
+  color: white;
+  size: 11pt;
+}
 
 .App {
   text-align: center;
