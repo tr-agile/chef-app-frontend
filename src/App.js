@@ -60,26 +60,27 @@ class App extends Component  {
 
 }
 // here is the code that changes the state in the event of the variables being changed within the search function. Harriet mentioned that once we have created a function that tracks the change in state we can hook this up to the back end queries with axios. this is as far as I have got with this and I need some support completeing this 
-handleCusineChange = (event) => {
-  this.setState({
-    Cusine: event.target.value
 
-  })
-}
+// handleCusineChange = (event) => {
+//   this.setState({
+//     Cusine: event.target.value
 
-handleBudgetChange = (event) => {
-  this.setState({
-    Budget: event.target.value
+//   })
+// }
 
-  })
-}
+// handleBudgetChange = (event) => {
+//   this.setState({
+//     Budget: event.target.value
 
-handleDateChange = (event) => {
-  this.setState({
-    Date: event.target.value
+//   })
+// }
 
-  })
-}
+// handleDateChange = (event) => {
+//   this.setState({
+//     Date: event.target.value
+
+//   })
+// }
 
 
 // this is the beginging of the function that will push new bookings to the booking table. this needs sanity checking as theres an issue when i try to confirm booking
