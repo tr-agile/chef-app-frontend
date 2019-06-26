@@ -134,7 +134,11 @@ render() {
             <Steps/>        
           </div>
         <div className="col-1"></div>
-      </div>    
+      </div>
+      <p>Chef Privé is a new and exclusive service which allows you to search for your own private chef who can cater for events or parties.<br></br>
+        Chef Privé allows you to search by date of your event, then you can search through a range of cuisines to suit your palette.<br></br> Finally, you just
+        need to choose which style of menu you'd like - are you going for simple, premier or michelin?<br></br> Click seach and find a menu that's the perfect fit.<br></br> 
+        Thank you for using <strong>Chef Privé</strong></p>    
       <Search searchClicked={this.searchClicked} />
       <br/>       
       <div className="row-100 d-flex justify-content-center">   
