@@ -87,7 +87,7 @@ searchClicked = (bookingDate) => {
 
   axios.get(`https://onkd21v7ba.execute-api.eu-west-2.amazonaws.com/dev/dining/${bookingDate}`)
   .then(response => {
-    this.setState({Menu: response.data.Menu});
+    this.setState({Menu: response.data.dining});
     alert(JSON.stringify(response.data));
   })
   .catch(function (error) {
@@ -140,8 +140,9 @@ render() {
       <div className="row-100 d-flex justify-content-center">   
         {/* this is the code that maps the menu table to the menus. It might be worth double checking I have done this correctly as I based this on the todo app however the way in which we retrive the menus in this app is different */}
        <div className="card-columns  mr-4">
+         
         {this.state.Menu.map((item, index) => {
-                return <Menu Menu={item} key={index} chefId={item.chefId}/>
+                return <Menu Menu={item} key={index}/>
             })}    
             
               
