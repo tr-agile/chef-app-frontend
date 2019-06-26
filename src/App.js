@@ -14,24 +14,7 @@ class App extends Component  {
 
   Menu: [
 
-    {chefId: 1, typeId: 1, menuCuisine: "French",  menuMeals:"Starter: Prawn Salad, Main: Beef Shifado, Dessert: Caramel Cheesecake", menuImageFPath:"https://images.unsplash.com/photo-1556710807-81aa7ea511f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1083&q=80", menuDietReqs:"Normal"},
-
-    {chefId: 2, typeId: 2, menuCuisine: "English",  menuMeals:"Starter: Roasted Duck, Main: Celeriac Soup, Dessert: Pomegranate Salad", menuImageFPath:"https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80", menuDietReqs:"Gluten Free"},
-    
-    {chefId: 1, typeId: 1, menuCuisine: "French",  menuMeals:"Starter: Prawn Salad, Main: Beef Shifado, Dessert: Caramel Cheesecake", menuImageFPath:"https://images.unsplash.com/photo-1556710807-81aa7ea511f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1083&q=80", menuDietReqs:"Normal"},
-
-    {chefId: 2, typeId: 2, menuCuisine: "English",  menuMeals:"Starter: Roasted Duck, Main: Celeriac Soup, Dessert: Pomegranate Salad", menuImageFPath:"https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80", menuDietReqs:"Gluten Free"},
-
-    {chefId: 2, typeId: 2, menuCuisine: "English",  menuMeals:"Starter: Roasted Duck, Main: Celeriac Soup, Dessert: Pomegranate Salad", menuImageFPath:"https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80", menuDietReqs:"Gluten Free"},
-
-    {chefId: 1, typeId: 1, menuCuisine: "French",  menuMeals:"Starter: Prawn Salad, Main: Beef Shifado, Dessert: Caramel Cheesecake", menuImageFPath:"https://images.unsplash.com/photo-1556710807-81aa7ea511f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1083&q=80", menuDietReqs:"Normal"},
-    {chefId: 1, typeId: 1, menuCuisine: "French",  menuMeals:"Starter: Prawn Salad, Main: Beef Shifado, Dessert: Caramel Cheesecake", menuImageFPath:"https://images.unsplash.com/photo-1556710807-81aa7ea511f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1083&q=80", menuDietReqs:"Normal"},
-    {chefId: 2, typeId: 2, menuCuisine: "English",  menuMeals:"Starter: Roasted Duck, Main: Celeriac Soup, Dessert: Pomegranate Salad", menuImageFPath:"https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80", menuDietReqs:"Gluten Free"},
-
-    {chefId: 2, typeId: 2, menuCuisine: "English",  menuMeals:"Starter: Roasted Duck, Main: Celeriac Soup, Dessert: Pomegranate Salad", menuImageFPath:"https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80", menuDietReqs:"Gluten Free"}  
-
-
-  ],
+    ],
 
   ChefTable: [
 
@@ -98,12 +81,13 @@ addBooking = (newBooking) => {
 
 
 
-searchClicked = () => { 
-  const bookingDate = this.state.Date;
+searchClicked = (bookingDate) => { 
+
+  alert(`Searching for ${bookingDate}`);
 
   axios.get(`https://onkd21v7ba.execute-api.eu-west-2.amazonaws.com/dev/dining/${bookingDate}`)
-  .then(function (response) {
-    // handle success
+  .then(response => {
+    this.setState({Menu: response.data.Menu});
     alert(JSON.stringify(response.data));
   })
   .catch(function (error) {
@@ -151,7 +135,7 @@ render() {
           </div>
         <div className="col-1"></div>
       </div>    
-      <Search searchClicked={this.searchClicked}/>
+      <Search searchClicked={this.searchClicked} />
       <br/>       
       <div className="row-100 d-flex justify-content-center">   
         {/* this is the code that maps the menu table to the menus. It might be worth double checking I have done this correctly as I based this on the todo app however the way in which we retrive the menus in this app is different */}
