@@ -83,12 +83,12 @@ addBooking = (newBooking) => {
 
 searchClicked = (bookingDate) => { 
 
-  alert(`Searching for ${bookingDate}`);
+ 
 
   axios.get(`https://onkd21v7ba.execute-api.eu-west-2.amazonaws.com/dev/dining/${bookingDate}`)
   .then(response => {
     this.setState({Menu: response.data.dining});
-    alert(JSON.stringify(response.data));
+    
   })
   .catch(function (error) {
     // handle error
