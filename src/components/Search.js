@@ -31,20 +31,8 @@ class Search extends Component {
 
 
   searchClicked = () => { 
-    const bookingDate = this.state.Date;
-  
-    axios.get(`https://onkd21v7ba.execute-api.eu-west-2.amazonaws.com/dev/dining/${bookingDate}`)
-    .then(function (response) {
-      // handle success
-      alert(JSON.stringify(response.data));
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    })
-    .finally(function () {
-      // always executed
-    });
+    const searchDate = this.state.Date;
+    this.props.searchClicked(searchDate);
   }
 
 
@@ -82,7 +70,7 @@ class Search extends Component {
             <input type="Date" className="form-control" placeholder="Date" onChange={this.handleDateChange}/>
           </div>
           <div className="col-3">
-            <Button onClick={this.props.searchClicked} variant="secondary" type="button"   className="btn-block mb-3" >
+            <Button onClick={this.searchClicked} variant="secondary" type="button"   className="btn-block mb-3" >
               Search
             </Button>
           </div>
