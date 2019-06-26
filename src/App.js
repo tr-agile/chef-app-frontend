@@ -151,7 +151,7 @@ render() {
           </div>
         <div className="col-1"></div>
       </div>    
-      <Search/>
+      <Search searchClicked={this.searchClicked}/>
       <br/>       
       <div className="row-100 d-flex justify-content-center">   
         {/* this is the code that maps the menu table to the menus. It might be worth double checking I have done this correctly as I based this on the todo app however the way in which we retrive the menus in this app is different */}
