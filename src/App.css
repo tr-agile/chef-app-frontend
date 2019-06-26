@@ -16,10 +16,13 @@ body {
   font-weight: 300;
 }
 
-h4 {
+h2 {
   width: auto;
   color: white;
-  size: 11pt;
+  size: 14pt;
+  font-weight: 400px;
+  background-color: #c69c6d;
+  opacity:0.8;
 }
 
 .App {
