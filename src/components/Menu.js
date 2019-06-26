@@ -137,8 +137,6 @@ class Menu extends Component {
           {/* <Card.Title><h2>{this.props.chefTable.chefName} </h2></Card.Title> */}
             <Card.Title><h2>{this.props.Menu.menuCuisine} </h2></Card.Title>           
               <Card.Text>
-                This is a wider card with supporting text below as a natural lead-in to
-                additional content. This content is a little bit longer.
               </Card.Text>              
           </Card.ImgOverlay>
 
