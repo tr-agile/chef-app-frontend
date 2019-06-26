@@ -4,7 +4,7 @@ import Steps from './components/Steps';
 import Search from './components/Search';
 import Header from './components/Header';
 import Menu from './components/Menu';
-
+import axios from 'axios'
 
 
 
@@ -96,6 +96,24 @@ addBooking = (newBooking) => {
   });
 }
 
+
+
+searchClicked = () => { 
+  const bookingDate = this.state.Date;
+
+  axios.get(`https://onkd21v7ba.execute-api.eu-west-2.amazonaws.com/dev/dining/${bookingDate}`)
+  .then(function (response) {
+    // handle success
+    alert(JSON.stringify(response.data));
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .finally(function () {
+    // always executed
+  });
+}
 
 // search = (searchMenus) => {
 
