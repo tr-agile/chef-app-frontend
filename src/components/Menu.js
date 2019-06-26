@@ -102,29 +102,29 @@ class Menu extends Component {
 
     // this is the beginging of the function that will push new bookings to the booking table. this needs sanity checking as theres an issue when i confirm booking. I have tracked react on the browser and the changes are recorded when the state changes in the input fields.
 
-    handleConfirmClick = () => {
+  //   handleConfirmClick = () => {
 
-      const newBooking = {
-        firstName: this.state.firstName,
-        lastName: this.state.lastName,
-        email: this.state.email,
-        address1: this.state.address1,
-        address2: this.state.address2,
-        city: this.state.city,
-        postcode: this.state.postcode,
-        contactNumber: this.state.contactNumber,
-        numberOfGuests: this.state.numberOfGuests, 
-      };
+  //     const newBooking = {
+  //       firstName: this.state.firstName,
+  //       lastName: this.state.lastName,
+  //       email: this.state.email,
+  //       address1: this.state.address1,
+  //       address2: this.state.address2,
+  //       city: this.state.city,
+  //       postcode: this.state.postcode,
+  //       contactNumber: this.state.contactNumber,
+  //       numberOfGuests: this.state.numberOfGuests, 
+  //     };
       
-      if (newBooking.firstName.length > 0 && newBooking.lastName.length > 0 && newBooking.email.length > 0 && newBooking.address1.length > 0 && newBooking.address2.length > 0 && newBooking.city.length > 0 && newBooking.postcode.length > 0 && newBooking.contactNumber.length > 0 && newBooking.numberOfGuests !== "Number of Guests")
-      { 
+  //     if (newBooking.firstName.length > 0 && newBooking.lastName.length > 0 && newBooking.email.length > 0 && newBooking.address1.length > 0 && newBooking.address2.length > 0 && newBooking.city.length > 0 && newBooking.postcode.length > 0 && newBooking.contactNumber.length > 0 && newBooking.numberOfGuests !== "Number of Guests")
+  //     { 
       
-      this.props.addBooking(newBooking);
-      this.setState({
-        text: ''
-      });
+  //     this.props.addBooking(newBooking);
+  //     this.setState({
+  //       text: ''
+  //     });
     
-  }      }
+  // }      }
     
 
 
